@@ -239,6 +239,7 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   margin: 0 auto;
+  border-color: transparent;
   
 }
 
@@ -661,6 +662,7 @@ footer {
   text-align: left;
   letter-spacing: 0.06em;
   color: #FFFFFF;
+  cursor: pointer;
   
 }
 .footer-button {
