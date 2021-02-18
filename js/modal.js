@@ -1,3 +1,5 @@
+console.log('123');
+
 (() => {
     const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),

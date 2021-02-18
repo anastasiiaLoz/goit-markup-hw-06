@@ -45,19 +45,65 @@
         <section class="banner">
             <div class="container">
             <h1 class="banner-title">Эффективные решения<br />для вашего бизнеса</h1>
-            <button type="button data-modal-open" class="banner-button">Заказать услугу</button>
+            <button data-modal-open type="button" class="banner-button">Заказать услугу</button>
             </div>
         </section> 
             
 
         <!-- -------МОДАЛЬНОЕ ОКНО -->
 
-            <div class="backdrop is-hidden" data-modal>
+            <class class="backdrop is-hidden" data-modal>
                 <div class="modal">
-                    <button data-modal-close>Закрыть</button>
-                </div>
+                    <button class="icon-white-circle" data-modal-close>
+                        <svg whith="11px" height="11px">
+                            <use href=./testSprite.svg#icon-white-circle></use>
+                        </svg>
+                    </button>
+
+                <h3 class="form-title">Оставьте свои данные, мы вам перезвоним</h3>
+                <form class="form-signup">
+                    <label for="name"> Имя </label>
+                    <div class="form-signup">
+                            <input type="text" name="name" id="name" class="input-info"/>
+                                <svg class="icon-man" width="11px" height="11px">
+                                    <use href="./testSprite.svg#icon-man"></use>
+                                </svg>
+                    </div>    
+                        <label for="tel">Телефон</label>
+                        <div class="form-signup">
+                        <input type="tel" name="tel" id="tel" class="input-info"/>
+                            <svg class="icon-phone" width="13px" height="13px" >
+                                <use href="./testSprite.svg#icon-phone"></use>
+                                </svg>
+                        </div>
+
+                            <label for="mail">Почта</label>
+                            <div class="form-signup">      
+                                <input type="mail" name="mail" id="mail" class="input-info"/>
+                                    <svg class="icon-mail" width="15px" height="12px">
+                                        <use href="./testSprite.svg#icon-email"></use>
+                                    </svg>
+                            
+                                <label for="comment">Комментарий</label>
+                                <div class="form-signup">
+                            <textarea name="comment" id="comment"  rows="10" placeholder="Введите текст"></textarea>
+                        </div>
+                    
+
+                        <div class="form-field">
+                            <input type="checkbox" name="decision" value="checkbox" id="checkbox" class="visually-hidden check">
+                            <label for="checkbox">Соглашаюсь с рассылкой и принимаю 
+                                <a href="">Условия договора</a> </label>
+                        </div>
+
+                        <button type="submit">Отправить</button>
+                </form>
             </div>
+            </div>
+        </class>
     
+
+
         <!--Specialties section-->
         <section class="specials-section">
             <!-- Title Особенности позже скроется -->
@@ -410,7 +456,21 @@
                     </li>
                     </ul>
                 </div>  
+            
+            <div class="container">
+            <div class="subscription ">
+                <b>Подпишитесь на рассылку</b>
+                    <form action="" class="footer-subscription">
+                        <input type="email" class="footer-email" placeholder="E-mail">
+                            <button type="submit" class="footer-button">Подписаться
+                        <svg width="24px" height="24px">
+                            <use href="./testSprite.svg#icon-send"></use>
+                        </svg>
+                    </button>
+                </form>
             </div>
+        </div>
+        </div>
         </footer>
     </main>
     <script src="./js/modal.js"></script>
