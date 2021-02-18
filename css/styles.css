@@ -32,9 +32,11 @@ p {
   margin: 0;
 }
 
-* {
+*, *::before,
+*::after {
   box-sizing: border-box;
 }
+
 
 body {
   font-family: "Raleway", sans-serif;
@@ -555,7 +557,6 @@ header {
 }
 
 
-
 /* _____________Footer section____________*/
 
 footer {
@@ -567,6 +568,7 @@ footer {
 
 .container.footer{
   display: flex;
+  justify-content: space-between;
 }
 
 .footer-borders .footer-address {
@@ -662,12 +664,20 @@ footer {
   
 }
 .footer-button {
-  
-  width: 24px;
-  height: 24px;
   fill: #FFFFFF;
   margin-left: 10px;
   margin-top: 3px;
+  padding-left: 30px;
+}
+
+.footer-email_form {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  width: 358px;
+  height: 50px;
 }
 
 
@@ -881,7 +891,6 @@ footer {
 }
 
 .form{
-  /* position: absolute; */
   display: flex;
   flex-direction: column;
   
@@ -896,14 +905,6 @@ footer {
   }
 
   .form-field {
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
-  width: 448px;
-  height: 120px;  
-  display: flex;
-  flex-direction: column;
-  height: 40px;
   margin-bottom: 10px;
   }
 
@@ -931,7 +932,7 @@ footer {
   margin-bottom: 12px;
   }
 
-  .icon-white-circle{
+  .modal-form_cross-icon{
     position: absolute;
     width: 30px;
     height: 30px;
@@ -943,23 +944,26 @@ footer {
     
     top: 8px;
     right: 8px;
-
+    
     background-color: var(--white-color);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.icon-white-circle:focus,
-.icon-white-circle:hover{
+
+.modal-form_cross-icon:focus,
+.modal-form_cross-icon:hover{
+  content: "";
   outline:none;
   fill: var(--accent-color);
+  cursor: pointer;
 }
 
-.icon-white-circle {
-  fill:rgba(0, 0, 0, 0.1);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+.cross-svg {
+  position: absolute;
+  left: 7px;
 }
+
 
 .form-signup .input-info{
   width: 448px;
@@ -968,10 +972,11 @@ footer {
   border-radius: 4px;
   transition: 250ms  cubic-bezier(0.4,0,0.2,1);
   padding-left: 42px;
+  outline: none;
 }
 
 
-.input-info + svg{
+.input-info + .modal-form_icon{
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -979,7 +984,7 @@ footer {
   position: relative;
 }
 
-.icon-man-svg, .icon-phone-svg, .icon-mail-svg{
+.modal-form_icon{
   position: absolute;
   top: 0;
   left: 0;
@@ -1007,7 +1012,14 @@ textarea{
   border-radius: 4px;
   padding: 12px 16px;
   resize: none;
-  transition: 250ms border-color cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 textarea:focus{
@@ -1015,7 +1027,15 @@ textarea:focus{
 }
 
 .form-agreement{
-  padding-left: 40px;
+  padding-top: 20px;
+  padding-left: 25px;
+  position: relative;
+  display: block;
+}
+
+.form-agreement >a{
+  color: var(--accent-color);
+
 }
 
 .form-agreement::before {
@@ -1026,4 +1046,29 @@ textarea:focus{
   height: 15px;
   border: 2px solid #000000;
   border-radius: 4px;
+  display: block;
+}
+
+.check:checked + .form-agreement::before {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.button-submit {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  left: 120px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  color: var(--white-color);
+  border-color: transparent;
+  margin-top: 20px;
+  
+}
+  
+.button-submit:hover,
+.button-submit:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
