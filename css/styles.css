@@ -525,6 +525,11 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.clients-example:last-child {
+  margin-right: 0;
+}
+
+
 .clients-links {
   display: flex;
   justify-content: center;
@@ -995,12 +1000,12 @@ footer {
   margin-top: 14px;
   margin-bottom: 14px;
   margin-left: 15px;
+
 }
 
-.input-info:focus
-.input-info:hover{
+.form-signup .input-info:hover {
   border-color: var(--accent-color);
-}
+} 
 
 .input-info:focus {
   fill: var(--accent-color);
@@ -1022,6 +1027,7 @@ textarea{
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
+
 }
 
 textarea:focus{
@@ -1052,9 +1058,22 @@ textarea:focus{
 }
 
 .check:checked + .form-agreement::before {
+  content: "";
+  fill: var(--accent-color);
+  background-image: url(../images/svg.images/tick.svg);
+
+  border-color: var(--accent-color);
   background-color: var(--accent-color);
-  border: none;
 }
+
+
+.form-field-img::before {
+  content: "";
+  position: relative;
+  bottom: 23px;
+  left: 2px;
+}
+
 
 .button-submit {
   position: absolute;
